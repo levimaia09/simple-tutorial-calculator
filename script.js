@@ -13,6 +13,12 @@ class Calculator {
         this.clear();
     }
 
+    formatDisplayNumber(number){
+        const stringNumber = number.toString();
+
+
+    }
+
     delete(){
         this.currentOperandText = this.currentOperandText.toString().slice(0, -1);
     }
@@ -48,6 +54,8 @@ class Calculator {
     }
 
     chooseOperation(operation){
+        if(this.currentOperandText == '') return;
+
         if(this.previousOperandText != ''){
             this.calculate();
         }
@@ -59,7 +67,10 @@ class Calculator {
     }
 
     appendNumber(number){
-        if(this.currentOperandText.includes('.') && number === '.') return;
+        if(number == '.'){
+            if(this.currentOperandText == '') return;
+            else if(this.currentOperandText.includes('.')) return;
+        }
         this.currentOperandText = `${this.currentOperandText}${number.toString()}`;
     }
 
