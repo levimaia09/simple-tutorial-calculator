@@ -1,0 +1,1 @@
+uma calculadora simples feita com a ajuda de um tutorial para fins educativos.
